@@ -1,0 +1,95 @@
+.track() {
+    height: var(--fpd-track-height);
+    border: 1px solid var(--fpd-border-color);
+    border-radius: 4px;
+    background: var(--fpd-light-bg-color);
+}
+
+.track-progess() {
+    background: linear-gradient(var(--fpd-secondary-color), var(--fpd-secondary-color)) 0/var(--sx) 100% no-repeat, var(--fpd-light-bg-color);
+}
+
+.thumb() {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 1em;
+    background: #fff;
+    border: 2px solid var(--fpd-secondary-color);
+    margin-top: calc((var(--fpd-track-height) * 0.5 - 1px) - (20px * 0.5));
+    cursor: pointer;
+}
+.thumb-hover() {
+    scale: 1.2;
+}
+
+.fpd-container {
+
+    fpd-range-slider {
+
+        display: block;
+        margin-top: 3px;
+
+        input[type=range] {
+            margin: 0;
+            padding: 0;
+            box-shadow: none;
+            width: 100%;
+        }
+
+        input[type=range]:focus {
+            outline: none;
+        }
+
+        /*webkit*/
+        input[type=range]::-webkit-slider-runnable-track {
+            .track();
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            .thumb();
+        }
+
+        input[type=range]::-webkit-slider-thumb:hover {
+            .thumb-hover()
+        }
+
+        &.fpd-progress {
+
+            input[type=range] {
+                --range: calc(var(--max) - var(--min));
+                --ratio: calc((var(--value) - var(--min)) / var(--range));
+                --sx: calc(0.5 * 20px + var(--ratio) * (100% - 20px));
+            }
+
+            input[type=range]::-webkit-slider-runnable-track {
+                .track-progess();
+            }
+
+        }
+
+        /*mozilla*/
+        input[type=range]::-moz-range-track {
+            .track();
+        }    
+
+        
+        input[type=range]::-moz-range-thumb {
+            .thumb();
+        }
+
+        input[type=range]::-moz-range-thumb:hover {
+            .thumb-hover();
+        }
+
+        &.fpd-progress {
+
+            input[type=range]::-moz-range-track {
+                .track-progess();
+            }
+
+        }
+
+    }
+
+}

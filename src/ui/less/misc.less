@@ -1,0 +1,131 @@
+/* RESET */
+.fpd-container {
+
+	*,
+	&:after,
+	&:before {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		max-width: 100%;
+		list-style-type: none;
+		text-shadow: none;
+		outline: none;
+		line-height: 20px;
+		border: none;
+		box-sizing: border-box;
+	}
+
+	input {
+		-webkit-appearance: none;
+		appearance: none;
+		height: auto;
+		background: transparent !important;
+		outline: none !important;
+	}
+
+	textarea {
+		background: transparent;
+		outline: none !important;
+	}
+
+	input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        appearance: none;
+    }
+
+}
+
+.fpd-wrapper {
+    
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 100%;
+    position: relative;
+	color: var(--fpd-text-color);
+    
+}
+
+.fpd-container.fpd-not-responsive,
+.fpd-container.fpd-not-responsive * {
+	max-width: none !important;
+
+
+	.fpd-product-stage {
+		overflow: auto;
+	}
+}
+
+/* Scrollbar */
+.fpd-container .fpd-scroll-area {
+    
+	height: 100%;
+    overflow: auto;
+	overscroll-behavior: none;
+	-webkit-overflow-scrolling: touch;
+    scrollbar-width: var(--fpd-scrollbar-width);
+    scrollbar-color: var(--fpd-scrollbar-thumb-color) var(--fpd-scrollbar-track-color);
+    
+    &::-webkit-scrollbar {
+        width: var(--fpd-scrollbar-width);
+		height: var(--fpd-scrollbar-width);
+        padding-right: 5px;
+        margin-right: 5px;
+    }
+     
+    &::-webkit-scrollbar-track {
+        background-color: var(--fpd-scrollbar-track-color);
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        margin: 20px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        background: var(--fpd-scrollbar-thumb-color); 
+    }
+    
+}
+
+.fpd-scrollbar-hidden {
+	
+    overscroll-behavior: none;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    
+    &::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+}
+
+/* FIX: Prevent zoom-in on mobile */
+textarea[data-fabric-hiddentextarea] {
+	font-size: 16px !important;
+	transform: translateY(-20px);
+	caret-color: transparent;
+}
+
+/* Helpers */
+.fpd-disabled {
+	opacity: 0.2 !important;
+	cursor: default !important;
+	pointer-events: none !important;
+}
+body .fpd-hidden {
+	display: none !important;
+	pointer-events: none !important;
+}
+.fpd-overflow-hidden {overflow: hidden !important;}
+.fpd-hidden-canvas {
+	position: absolute !important;
+	left: -9999999px;
+}
+[class^="fpd-icon-"]:before {
+	color: inherit !important;
+}
+
+body .fpd-visible-hidden {
+	visibility: hidden !important;
+	pointer-events: none !important;
+}

@@ -1,0 +1,118 @@
+.fpd-container fpd-views-nav {
+
+    position: absolute;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 4px 8px;
+    bottom: calc(10px + env(safe-area-inset-bottom));
+    right: 10px;
+    background: #fff;
+    box-shadow: 0px 0px 10px rgba(110, 111, 114, 0.22);
+    border-radius: var(--fpd-border-radius);
+    min-height: 35px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 160px;
+
+    > .fpd-view-locker {
+        font-size: 20px;
+        cursor: pointer;
+        margin-left: 5px;
+
+        .fpd-icon-locked {
+            color: var(--fpd-secondary-color);
+        }
+       
+    }
+
+    >.fpd-view-prev,
+    >.fpd-view-next {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+        border-radius: 50%;
+        text-align: center;
+        cursor: pointer;
+        transform-origin: center center;
+
+        &:hover {
+            color: var(--fpd-secondary-color);
+        }
+    }
+
+    >.fpd-view-prev {
+        rotate: -180deg;
+    }
+
+    >.fpd-show-views-grid {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        line-height: 1;
+
+        > .fpd-icon-pages {
+            font-size: 18px;
+            margin-right: 4px;
+        }
+
+        > .fpd-current-view {
+            font-size: 16px;
+            margin-right: 2px;
+            padding-top: 2px;
+        }
+
+        > .fpd-total-views {
+            display: inline-block;
+            padding: 4px 0;
+            text-align: center;
+            color: var(--fpd-dark-grey-color);
+            font-size: 12px;
+
+            &:before {
+                content: "/";
+            }
+
+        }
+
+    }
+
+    > .fpd-view-edit-size {
+        display: flex;
+        flex-direction: row;
+        flex: 1 1 100%;
+        width: 50px;
+        border-bottom: 1px solid var(--fpd-border-color);
+
+        .fpd-input {
+            box-shadow: none;
+            border-radius: 0;
+            border: none;
+            height: 100%;
+
+            &:first-child {
+                border-top-left-radius: var(--fpd-border-radius);
+            }
+
+            > span {
+                background: var(--fpd-border-color);
+                padding: 6px 6px;
+            }
+
+            > input {
+                padding: 0;
+                height: auto;
+            }
+        }
+    }
+
+}
+
+.fpd-views-inside-left fpd-views-nav {
+    left: 10px;
+    right: auto;
+}

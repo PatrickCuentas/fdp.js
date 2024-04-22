@@ -1,0 +1,40 @@
+.fpd-container .fpd-btn,
+.fpd-modal-inner .fpd-btn {
+
+    background: var(--fpd-btn-primary-color);
+    color: var(--fpd-btn-primary-text-color);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 15px;
+    font-size: 14px;
+    margin: 10px 0;
+    text-transform: uppercase;
+    border-radius: var(--fpd-border-radius);
+    transition: all 200ms ease-out;
+    
+    &:hover {
+        opacity: 0.8;
+    }
+    
+    &.fpd-loading {
+        background-image: var(--fpd-loading-svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 30%;
+        opacity: 0.8;
+        color: transparent;
+        cursor: wait;
+    }
+
+    &.fpd-secondary {
+        background: var(--fpd-light-grey-color);
+        color: var(--fpd-dark-grey-color);
+    }
+
+    &.fpd-full {
+        width: 100%;
+        justify-content: center;
+    }
+    
+}

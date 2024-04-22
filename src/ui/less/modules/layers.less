@@ -1,0 +1,168 @@
+.fpd-container fpd-module-manage-layers {
+    
+    .fpd-list {
+
+        padding: var(--fpd-module-content-padding);
+        position: relative;
+        min-height: 100%;
+        
+        .fpd-list-row {
+            
+            flex-wrap: wrap;
+            margin: 10px 5px 10px 0;
+            align-items: center;
+            border: 1px solid transparent;
+            border-radius: var(--fpd-border-radius);
+            box-shadow: 0px 0px 10px rgba(110, 111, 114, 0.2);
+            
+            > div {
+            
+                overflow: hidden;
+                white-space: nowrap;
+                
+                &.fpd-cell-0 {
+                    
+                    flex: 0 45px;
+                    text-align: center;
+                    
+                    > .fpd-current-color {
+                        cursor: pointer;
+                        width: 25px;
+                        height: 25px;
+                        display: block;
+                        border-radius: var(--fpd-border-radius);
+                        margin: auto;
+                        border: 1px solid rgba(0,0,0, 0.1)
+                    }
+                    
+                }
+                
+                &.fpd-cell-1 {
+                    
+                    padding-left: 0;
+                    padding-right: 0;
+                    
+                    textarea {
+                        border: 1px solid var(--fpd-border-color);
+                        min-height: auto;
+                        max-height: 30px;
+                        width: 100%;
+                        padding: 3px 5px !important;
+                        box-shadow: none;
+                        margin: 0;
+                    }
+
+                    .fpd-img-meta {
+                        font-size: 11px;
+                        font-weight: bold;
+
+                        span {
+                            font-weight: normal;
+                            margin-right: 5px;
+                        }
+                    }
+                    
+                }
+                
+                &.fpd-cell-2 {
+                    
+                    flex: 0 110px;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    padding-right: 10px;
+                    
+                    > span {
+                        
+                        padding-left: 8px;
+                        font-size: 18px;
+                        opacity: 0.7;
+                        transition: opacity 300ms ease-out;
+                        flex: 1;
+                        flex-grow: 0;
+                        
+                        &.fpd-icon-reorder {
+                            cursor: move;
+                        }
+                        
+                        &:first-child {
+                            padding: 0;
+                        }
+                        
+                        &:hover {
+                            opacity: 1;
+                        }
+
+                        > * {
+                            vertical-align: top;
+
+                            &.fpd-icon-eye {
+                                font-size: 13.5px;
+                            }
+                        }
+
+                        
+                        
+                    }
+                    
+                }
+                
+                &.fpd-cell-full {
+                    
+                    padding: 0 0 10px;
+                    display: none;
+                    
+                    > .fpd-scroll-area {
+                        
+                        &.fpd-has-subpanel {
+                            max-height: none;
+                        }
+                        
+                        > .fpd-color-palette,
+                        > .fpd-patterns-wrapper {
+                            
+                            padding: 0 10px;
+                            
+                            > .fpd-colorpicker-wrapper {
+                                padding: 0;
+                            }
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+
+            &:hover {
+                border-color: var(--fpd-border-color);
+            }
+            
+            &.fpd-show-colors {
+                
+                background: var(--fpd-list-bg-color-active);
+
+                .fpd-cell-full {
+                    display: block;
+                }
+                
+            }
+            
+            &.fpd-locked > div:nth-child(-n+2) {
+                opacity: 0.2;
+                pointer-events: none;
+            }
+
+            &.fpd-hide-dpi {
+
+                .fpd-dpi {
+                    display: none;
+                }
+
+            }
+            
+        }
+        
+    }
+    
+}

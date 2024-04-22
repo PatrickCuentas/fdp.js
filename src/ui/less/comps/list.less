@@ -1,0 +1,30 @@
+.fpd-list {
+    
+    width: 100%;
+    overflow: auto;
+    
+    > .fpd-list-row {
+        display: flex;
+        font-size: 15px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: background 300ms ease-out;
+        
+        > .fpd-cell-full {
+            flex: 1 100%;
+        }
+        
+        > div {
+            padding: 22px 0;
+            flex: 1;
+        }
+        
+    }
+    
+    .fpd-sortable-placeholder {
+        background: rgba(0,0,0, 0.05);
+        border: 2px dotted var(--fpd-border-color);
+        height: 65px;
+    }
+    
+}

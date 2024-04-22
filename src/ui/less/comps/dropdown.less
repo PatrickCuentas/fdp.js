@@ -1,0 +1,87 @@
+body fpd-dropdown {
+    
+    position: relative;
+    display: flex;
+    height: var(--fpd-dropdown-height);
+    
+    > .fpd-dropdown-current {
+        height: 100%;
+        width: 100% !important;
+        padding: 7px 20px 7px 7px !important;
+        margin: 0 !important;
+    }
+    
+    > .fpd-dropdown-arrow {
+        position: absolute;
+        font-size: 20px;
+        right: 2px;
+        top: ~"calc(50% - 10px)";
+        opacity: 0.6;
+        text-align: center;
+        width: 20px;
+        height: 20px;
+        transform-origin: center center;
+        transition: all 200ms ease-out;
+        cursor: pointer;
+    }
+    
+    .fpd-dropdown-list {
+
+        display: none;
+        position: fixed;
+        padding-right: 5px;
+        left: 0;
+        top: 0;
+        background: #fff;
+        z-index: 100;
+        box-shadow: 0 2px 0 1px rgb(64 87 109 / 7%), 0 2px 12px rgb(53 71 90 / 20%);
+        transform: translateY(2px);
+        border-radius: 4px;
+        max-height: 200px;
+
+        > .fpd-scroll-area {
+            max-height: inherit;
+            padding: 0 !important;
+        }
+        
+        .fpd-item {
+            display: block;
+            text-align: left;
+            margin: 5px;
+            padding: 10px;
+            line-height: 14px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+            
+            &:hover {
+                background: rgba(0,0,0,0.05);
+            }
+            
+        }
+                
+    }
+    
+    &.fpd-active .fpd-dropdown-list,
+    input:focus ~ .fpd-dropdown-list {
+        display: block;
+        border: 1px solid var(--fpd-border-color);
+    }
+    
+    &.fpd-active > .fpd-dropdown-arrow,
+    input:focus ~ .fpd-dropdown-arrow {
+        transform: rotate(90deg);
+    }
+    
+    &.fpd-on-loading .fpd-dropdown-arrow {
+        display: none !important;
+    }
+    
+    &.fpd-on-loading > input.fpd-dropdown-current {
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-position: 98% center;
+        background-image: var(--fpd-loading-svg);
+    }
+        
+}

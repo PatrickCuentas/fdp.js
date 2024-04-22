@@ -1,0 +1,70 @@
+.fpd-container fpd-module-uploads {
+    
+    .fpd-upload-image {
+        
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        border: 2px dashed var(--fpd-border-color);
+        background: var(--fpd-module-secondary-color);
+        color: var(--fpd-module-secondary-text-color);
+        border-radius: var(--fpd-border-radius);
+        padding: 10px 10px 0;
+        cursor: pointer;
+        margin-bottom: 10px;
+        
+        > span {
+            display: block;
+            font-size: 10px;
+            text-transform: uppercase;
+            margin: 0 0 15px !important;
+        }
+        
+        > .fpd-price {
+            font-size: 12px;
+            line-height: 1;
+        }
+                
+        &.fpd-hover {
+            opacity: 0.5;
+        }
+        
+    }
+    
+    .fpd-grid {
+        
+        .fpd-loading-bar {
+            background: rgba(255,255,255, 0.7);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60%;
+            height: 6px;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+        
+        .fpd-loading-bar > .fpd-loading-progress {
+            background: #fff;
+            height: 100%;
+            width: 0;
+        }
+        
+    }
+    
+    .fpd-image-quality-ratings {
+
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        line-height: 1;
+    
+        > span {
+            color: var(--fpd-image-quality-start-color);
+            text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.7);
+            font-size: 18px;
+        }
+    
+    }
+ 
+}
