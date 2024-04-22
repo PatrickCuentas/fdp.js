@@ -25,14 +25,17 @@
     <div class="container">
       <div
         id="fpd-target"
-        class="fpd-off-canvas fpd-shadow-3 fpd-views-inside-right"
+        class="fpd-sidebar fpd-shadow-2 fpd-views-inside-right"
       ></div>
 
       <script>
         const appOptions = {
           productsJSON: "../data/products/product-categories.json",
           designsJSON: "../data/designs/design-categories.json",
-          langJSON: "../data/langs/default.json",
+          layouts: "../data/layouts/data.json",
+          langJson: "../data/langs/default.json",
+          initialActiveModule: "products",
+          toolbarPlacement: "sidebar",
           mainBarModules: [
             "products",
             "images",
@@ -71,8 +74,7 @@
               }
             }
           ],
-          toolbarPlacement: "sidebar",
-          // fileServerURL: "http://localhost/fdp-server/file-handler.php", //enter the url to the file-handler.php, see https://github.com/radykal/fpd-js-server
+          fileServerURL: "", //enter the url to the file-handler.php, see https://github.com/radykal/fpd-js-server
           facebookAppId: "",
           instagramClientId: "",
           instagramRedirectUri: "./data/html/instagram_auth.html",
